@@ -26,5 +26,7 @@ namespace HangmanGUI
         {
 
         }
+
+        Hangman = new hangMan
     }
 }
