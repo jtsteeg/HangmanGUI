@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HangmanGUI
 {
-    public partial class Form1 : Form
+    public partial class HangmanGUI : Form
     {
-        public Form1()
+        public HangmanGUI()
         {
             InitializeComponent();
         }
@@ -27,6 +27,9 @@ namespace HangmanGUI
 
         }
 
-        Hangman = new hangMan
+         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
