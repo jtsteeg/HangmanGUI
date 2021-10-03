@@ -31,5 +31,10 @@ namespace HangmanGUI
         {
 
         }
+
+        private void LivesLeftLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

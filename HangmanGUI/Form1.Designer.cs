@@ -33,9 +33,9 @@ namespace HangmanGUI
             this.CharacterGuessInput = new System.Windows.Forms.TextBox();
             this.MysteryWordBox = new System.Windows.Forms.GroupBox();
             this.StatsBox = new System.Windows.Forms.GroupBox();
+            this.IncorrectLettersGuessedLabel = new System.Windows.Forms.Label();
             this.LivesLeftLabel = new System.Windows.Forms.Label();
             this.WordLengthLabel = new System.Windows.Forms.Label();
-            this.IncorrectLettersGuessedLabel = new System.Windows.Forms.Label();
             this.StatsBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,15 @@ namespace HangmanGUI
             this.StatsBox.TabStop = false;
             this.StatsBox.Text = "Stats";
             // 
+            // IncorrectLettersGuessedLabel
+            // 
+            this.IncorrectLettersGuessedLabel.AutoSize = true;
+            this.IncorrectLettersGuessedLabel.Location = new System.Drawing.Point(195, 29);
+            this.IncorrectLettersGuessedLabel.Name = "IncorrectLettersGuessedLabel";
+            this.IncorrectLettersGuessedLabel.Size = new System.Drawing.Size(219, 25);
+            this.IncorrectLettersGuessedLabel.TabIndex = 2;
+            this.IncorrectLettersGuessedLabel.Text = "Incorrect Letters Guessed: ";
+            // 
             // LivesLeftLabel
             // 
             this.LivesLeftLabel.AutoSize = true;
@@ -85,6 +94,7 @@ namespace HangmanGUI
             this.LivesLeftLabel.Size = new System.Drawing.Size(93, 25);
             this.LivesLeftLabel.TabIndex = 1;
             this.LivesLeftLabel.Text = "Lives Left: ";
+            this.LivesLeftLabel.Click += new System.EventHandler(this.LivesLeftLabel_Click);
             // 
             // WordLengthLabel
             // 
@@ -96,17 +106,9 @@ namespace HangmanGUI
             this.WordLengthLabel.Text = "Word Length: ";
             this.WordLengthLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // IncorrectLettersGuessedLabel
-            // 
-            this.IncorrectLettersGuessedLabel.AutoSize = true;
-            this.IncorrectLettersGuessedLabel.Location = new System.Drawing.Point(195, 29);
-            this.IncorrectLettersGuessedLabel.Name = "IncorrectLettersGuessedLabel";
-            this.IncorrectLettersGuessedLabel.Size = new System.Drawing.Size(219, 25);
-            this.IncorrectLettersGuessedLabel.TabIndex = 2;
-            this.IncorrectLettersGuessedLabel.Text = "Incorrect Letters Guessed: ";
-            // 
             // HangmanGUI
             // 
+            this.AcceptButton = this.SubmitGuessButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 544);
