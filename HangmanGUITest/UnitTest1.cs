@@ -1,3 +1,4 @@
+using HangmanGUI;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 //include classes to test here
 
