@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HangmanGUI
 {
-    class WordLibrary
+    public class WordLibrary
     {
         public List<string> wordSet { get; set; }
         public WordLibrary()
