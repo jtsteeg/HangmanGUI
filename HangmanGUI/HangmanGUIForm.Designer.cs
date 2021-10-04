@@ -1,7 +1,7 @@
 ﻿
 namespace HangmanGUI
 {
-    partial class HangmanGUI
+    partial class HangmanGUIForm
     {
         /// <summary>
         ///  Required designer variable.

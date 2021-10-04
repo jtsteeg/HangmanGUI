@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace HangmanGUI
 {
-    public partial class HangmanGUI : Form
+    public partial class HangmanGUIForm : Form
     {
 
         List<Label> letterDisplay = new List<Label>();
-        public HangmanGUI()
+        public HangmanGUIForm()
         {
             InitializeComponent();
             
