@@ -59,5 +59,8 @@ namespace HangmanGUI
                 letterDisplay[i].CreateControl();
             }
         }
+
+        //this is a test
+        //lets hope for no errors
     }
 }
