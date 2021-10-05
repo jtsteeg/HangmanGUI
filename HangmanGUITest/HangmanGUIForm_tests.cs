@@ -8,9 +8,16 @@ namespace HangmanGUITest
     public class HangmanGUIForm_tests
     {
         [TestMethod]
-        public void Test1()
+        public void DrawLines_Run_DisplayedMatchesLength()
         {
+            var sut = new HangmanGUIForm();
 
+
+            var mysteryWordLength = sut.mysteryWord.Length;
+            var displayedCharacters = sut.letterDisplay.Count;
+
+
+            Assert.AreEqual(mysteryWordLength, displayedCharacters);
         }
     }
 }

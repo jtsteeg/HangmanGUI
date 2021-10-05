@@ -13,15 +13,18 @@ namespace HangmanGUI
 {
     public partial class HangmanGUIForm : Form
     {
-        string word = "";        
-        List<Label> letterDisplay = new List<Label>();
-        int amount = 0;
-        WordLibrary WL = new WordLibrary();
-       
+              
+        
+        int incorrectTries = 0;
+        WordLibrary wordPool = new WordLibrary();
+
+        public List<Label> letterDisplay { get; set; }        
+        public String mysteryWord { get; set; }
+
         public HangmanGUIForm()
         {
             InitializeComponent();
-            
+            letterDisplay = new List<Label>();
             DrawLines();
         }
 
@@ -51,8 +54,8 @@ namespace HangmanGUI
 
         private void DrawLines()
         {
-            word = WL.GetRandomWord();
-            char[] mysteryList = word.ToCharArray();
+            mysteryWord = wordPool.GetRandomWord();
+            char[] mysteryList = mysteryWord.ToCharArray();
             int spacing = 650 / mysteryList.Length;
             for (int i = 0; i < mysteryList.Length; i++)
             {
@@ -64,7 +67,7 @@ namespace HangmanGUI
                 letterDisplay[i].CreateControl();
             }
 
-            label1.Text = "Word Length: " + (mysteryList.Length).ToString();
+            label1.Text = "Word Length: " + mysteryWord.Length;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -75,9 +78,9 @@ namespace HangmanGUI
                 MessageBox.Show("You can only submit a single letter!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (word.Contains(letter))
+            if (mysteryWord.Contains(letter))
             {
-                char[] letters = word.ToCharArray();
+                char[] letters = mysteryWord.ToCharArray();
                 for (int i = 0; i < letters.Length; i++)
                 {
                     if (letters[i] == letter)
@@ -86,17 +89,17 @@ namespace HangmanGUI
                 foreach (Label l in letterDisplay)
                     if (l.Text == "*") return;
                 MessageBox.Show("You have won", "Congratulations");
-                ResetGame();
+                System.Environment.Exit(1);
             }
             else
             {
                 MessageBox.Show("The letter that you guessed is not in the word", "Missed word");
                 label2.Text += " " + letter.ToString() + ",";
-                amount ++;
-                if (amount == 8)
+                incorrectTries ++;
+                if (incorrectTries == 8)
                 {
-                    MessageBox.Show("Sorry you lose, the word was" + word);
-                    ResetGame();
+                    MessageBox.Show("Sorry you lose, the word was: " + mysteryWord);
+                    System.Environment.Exit(1);
                 }
             }
         }
@@ -109,10 +112,10 @@ namespace HangmanGUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == word)
+            if (textBox2.Text == mysteryWord)
             {
                 MessageBox.Show("You have Won", "Congratulations");
-                ResetGame();
+                //ResetGame();
             }
             else
             {
