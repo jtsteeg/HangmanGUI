@@ -12,6 +12,7 @@ namespace HangmanGUI
         public WordLibrary()
         {
             wordSet = new List<string>() { "horse", "chicken", "llama", "cow", "duck", };
+            
         }
 
         public string GetRandomWord()

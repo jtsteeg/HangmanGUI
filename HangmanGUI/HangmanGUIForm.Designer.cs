@@ -29,111 +29,111 @@ namespace HangmanGUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.SubmitGuessButton = new System.Windows.Forms.Button();
-            this.CharacterGuessInput = new System.Windows.Forms.TextBox();
             this.MysteryWordBox = new System.Windows.Forms.GroupBox();
-            this.StatsBox = new System.Windows.Forms.GroupBox();
-            this.IncorrectLettersGuessedLabel = new System.Windows.Forms.Label();
-            this.LivesLeftLabel = new System.Windows.Forms.Label();
-            this.WordLengthLabel = new System.Windows.Forms.Label();
-            this.StatsBox.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.MysteryWordBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // SubmitGuessButton
-            // 
-            this.SubmitGuessButton.Location = new System.Drawing.Point(107, 455);
-            this.SubmitGuessButton.Name = "SubmitGuessButton";
-            this.SubmitGuessButton.Size = new System.Drawing.Size(112, 34);
-            this.SubmitGuessButton.TabIndex = 0;
-            this.SubmitGuessButton.Text = "Guess";
-            this.SubmitGuessButton.UseVisualStyleBackColor = true;
-            // 
-            // CharacterGuessInput
-            // 
-            this.CharacterGuessInput.Location = new System.Drawing.Point(43, 458);
-            this.CharacterGuessInput.Name = "CharacterGuessInput";
-            this.CharacterGuessInput.Size = new System.Drawing.Size(44, 31);
-            this.CharacterGuessInput.TabIndex = 1;
-            this.CharacterGuessInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // MysteryWordBox
             // 
-            this.MysteryWordBox.Location = new System.Drawing.Point(43, 30);
+            this.MysteryWordBox.Controls.Add(this.label2);
+            this.MysteryWordBox.Controls.Add(this.label1);
+            this.MysteryWordBox.Location = new System.Drawing.Point(64, 44);
+            this.MysteryWordBox.Margin = new System.Windows.Forms.Padding(4);
             this.MysteryWordBox.Name = "MysteryWordBox";
-            this.MysteryWordBox.Size = new System.Drawing.Size(800, 389);
+            this.MysteryWordBox.Padding = new System.Windows.Forms.Padding(4);
+            this.MysteryWordBox.Size = new System.Drawing.Size(1200, 576);
             this.MysteryWordBox.TabIndex = 2;
             this.MysteryWordBox.TabStop = false;
             this.MysteryWordBox.Text = "Mystery Word";
             // 
-            // StatsBox
+            // label2
             // 
-            this.StatsBox.Controls.Add(this.IncorrectLettersGuessedLabel);
-            this.StatsBox.Controls.Add(this.LivesLeftLabel);
-            this.StatsBox.Controls.Add(this.WordLengthLabel);
-            this.StatsBox.Location = new System.Drawing.Point(279, 426);
-            this.StatsBox.Name = "StatsBox";
-            this.StatsBox.Size = new System.Drawing.Size(564, 106);
-            this.StatsBox.TabIndex = 3;
-            this.StatsBox.TabStop = false;
-            this.StatsBox.Text = "Stats";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 535);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 37);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Missed:";
             // 
-            // IncorrectLettersGuessedLabel
+            // label1
             // 
-            this.IncorrectLettersGuessedLabel.AutoSize = true;
-            this.IncorrectLettersGuessedLabel.Location = new System.Drawing.Point(195, 29);
-            this.IncorrectLettersGuessedLabel.Name = "IncorrectLettersGuessedLabel";
-            this.IncorrectLettersGuessedLabel.Size = new System.Drawing.Size(219, 25);
-            this.IncorrectLettersGuessedLabel.TabIndex = 2;
-            this.IncorrectLettersGuessedLabel.Text = "Incorrect Letters Guessed: ";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(831, 535);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Word Lenght:";
             // 
-            // LivesLeftLabel
+            // textBox1
             // 
-            this.LivesLeftLabel.AutoSize = true;
-            this.LivesLeftLabel.Location = new System.Drawing.Point(17, 58);
-            this.LivesLeftLabel.Name = "LivesLeftLabel";
-            this.LivesLeftLabel.Size = new System.Drawing.Size(93, 25);
-            this.LivesLeftLabel.TabIndex = 1;
-            this.LivesLeftLabel.Text = "Lives Left: ";
-            this.LivesLeftLabel.Click += new System.EventHandler(this.LivesLeftLabel_Click);
+            this.textBox1.Location = new System.Drawing.Point(250, 662);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(79, 43);
+            this.textBox1.TabIndex = 4;
             // 
-            // WordLengthLabel
+            // button1
             // 
-            this.WordLengthLabel.AutoSize = true;
-            this.WordLengthLabel.Location = new System.Drawing.Point(17, 29);
-            this.WordLengthLabel.Name = "WordLengthLabel";
-            this.WordLengthLabel.Size = new System.Drawing.Size(124, 25);
-            this.WordLengthLabel.TabIndex = 0;
-            this.WordLengthLabel.Text = "Word Length: ";
-            this.WordLengthLabel.Click += new System.EventHandler(this.label1_Click_1);
+            this.button1.Location = new System.Drawing.Point(64, 657);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 52);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Guess";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // HangmanGUI
+            // button2
             // 
-            this.AcceptButton = this.SubmitGuessButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.button2.Location = new System.Drawing.Point(456, 653);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(269, 52);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Submit Word";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(764, 662);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(225, 43);
+            this.textBox2.TabIndex = 7;
+            // 
+            // HangmanGUIForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 544);
-            this.Controls.Add(this.StatsBox);
+            this.ClientSize = new System.Drawing.Size(1344, 902);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.MysteryWordBox);
-            this.Controls.Add(this.CharacterGuessInput);
-            this.Controls.Add(this.SubmitGuessButton);
-            this.Name = "HangmanGUI";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.Name = "HangmanGUIForm";
             this.Text = "HangmanGUI";
-            this.StatsBox.ResumeLayout(false);
-            this.StatsBox.PerformLayout();
+            this.MysteryWordBox.ResumeLayout(false);
+            this.MysteryWordBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button SubmitGuessButton;
-        private System.Windows.Forms.TextBox CharacterGuessInput;
         private System.Windows.Forms.GroupBox MysteryWordBox;
-        private System.Windows.Forms.GroupBox StatsBox;
-        private System.Windows.Forms.Label LivesLeftLabel;
-        private System.Windows.Forms.Label WordLengthLabel;
-        private System.Windows.Forms.Label IncorrectLettersGuessedLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
