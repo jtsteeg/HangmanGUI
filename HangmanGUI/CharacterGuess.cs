@@ -8,9 +8,14 @@ namespace HangmanGUI
 {
     public class CharacterGuess
     {
- 
-        public int logic(char letter, string mysteryWord)
+        char letter = ' '; 
+        public int logic(string input, string mysteryWord)
         {
+            if(input.Length > 1 || input.Length < 1)
+            {
+                return 1;
+            }
+            letter = input.ToLower().ToCharArray()[0];
 
             if (!char.IsLetter(letter))
             {

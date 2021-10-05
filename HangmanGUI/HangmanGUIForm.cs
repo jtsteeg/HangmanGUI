@@ -72,7 +72,8 @@ namespace HangmanGUI
         public void guessButton_Click(object sender, EventArgs e)
         {
             char letter = textBox1.Text.ToLower().ToCharArray()[0];
-            int result = evaluater.logic(letter, mysteryWord);
+            int result = evaluater.logic(textBox1.Text, mysteryWord);
+
 
             if (result == 1)
             {
