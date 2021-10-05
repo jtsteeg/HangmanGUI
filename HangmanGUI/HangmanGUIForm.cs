@@ -13,10 +13,10 @@ namespace HangmanGUI
 {
     public partial class HangmanGUIForm : Form
     {
-        string word = "";
-        
+        string word = "";        
         List<Label> letterDisplay = new List<Label>();
-        int amount = 0;  
+        int amount = 0;
+        WordLibrary WL = new WordLibrary();
        
         public HangmanGUIForm()
         {
@@ -47,21 +47,14 @@ namespace HangmanGUI
 
         }
 
-        string WordBank()
-        {
-            WebClient wc = new WebClient();
-            string wordlist = wc.DownloadString("https://www.spelling-words-well.com/support-files/fourth-grade-spelling-words.pdf");
-            string[] words = wordlist.Split("\n");
-            Random ran = new Random();
-            return words[ran.Next(0, words.Length - 1)];
-        }
+
 
         private void DrawLines()
         {
-            word = WordBank();
+            word = WL.GetRandomWord();
             char[] mysteryList = word.ToCharArray();
-            int spacing = 650 / mysteryList.Length - 1;
-            for (int i = 0; i < mysteryList.Length - 1; i++)
+            int spacing = 650 / mysteryList.Length;
+            for (int i = 0; i < mysteryList.Length; i++)
             {
                 letterDisplay.Add(new Label());
                 letterDisplay[i].Location = new Point((i * spacing) + 10, 80);
@@ -71,7 +64,7 @@ namespace HangmanGUI
                 letterDisplay[i].CreateControl();
             }
 
-            label1.Text = "Word Lenght: " + (mysteryList.Length).ToString();
+            label1.Text = "Word Length: " + (mysteryList.Length).ToString();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -79,7 +72,7 @@ namespace HangmanGUI
             char letter = textBox1.Text.ToLower().ToCharArray()[0];
             if (!char.IsLetter(letter))
             {
-                MessageBox.Show("You can only submit letter!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You can only submit a single letter!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (word.Contains(letter))
@@ -109,7 +102,6 @@ namespace HangmanGUI
         }
         void ResetGame()
         {
-            WordBank();
             DrawLines();
             label2.Text = "Missed: ";
             textBox1.Text = "";
