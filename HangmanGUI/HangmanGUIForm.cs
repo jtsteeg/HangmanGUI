@@ -17,6 +17,7 @@ namespace HangmanGUI
         
         int incorrectTries = 0;
         WordLibrary wordPool = new WordLibrary();
+        CharacterGuess evaluater = new CharacterGuess();
 
         public List<Label> letterDisplay { get; set; }        
         public String mysteryWord { get; set; }
@@ -70,15 +71,17 @@ namespace HangmanGUI
             label1.Text = "Word Length: " + mysteryWord.Length;
         }
 
-        private void guessButton_Click(object sender, EventArgs e)
+        public void guessButton_Click(object sender, EventArgs e)
         {
             char letter = textBox1.Text.ToLower().ToCharArray()[0];
-            if (!char.IsLetter(letter))
+            int result = evaluater.logic(letter, mysteryWord);
+
+            if (result == 1)
             {
                 MessageBox.Show("You can only submit a single letter!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (mysteryWord.Contains(letter))
+            if (result == 2)
             {
                 char[] letters = mysteryWord.ToCharArray();
                 for (int i = 0; i < letters.Length; i++)
