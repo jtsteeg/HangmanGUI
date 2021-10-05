@@ -18,5 +18,20 @@ namespace HangmanGUITest
             Assert.IsInstanceOfType(actual, typeof(string));
             
         }
+
+        [TestMethod]
+        public void GetWordList_Run_ReturnsListOfString()
+        {
+
+            var sut = new WordLibrary();
+
+            var actual = sut.wordSet;
+
+            foreach (var item in actual)
+            {
+                Assert.IsInstanceOfType(item, typeof(string));
+            }
+
+        }
     }
 }

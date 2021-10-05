@@ -97,5 +97,61 @@ namespace HangmanGUITest
             Assert.AreEqual(expected, result);
 
         }
+
+        [TestMethod]
+        public void WordIsInvalid_InputContainsNumber_returnsTrue()
+        {
+            var guessInput = "cat1";
+
+            var expected = true;
+
+            var sut = new CharacterGuess();
+
+            var result = sut.wordIsInvalid(guessInput);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void WordIsInvalid_InputContainsNonLetterCharacter_returnsTrue()
+        {
+            var guessInput = "ca!t";
+
+            var expected = true;
+
+            var sut = new CharacterGuess();
+
+            var result = sut.wordIsInvalid(guessInput);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void WordIsInvalid_InputEmpty_returnsTrue()
+        {
+            var guessInput = "";
+
+            var expected = true;
+
+            var sut = new CharacterGuess();
+
+            var result = sut.wordIsInvalid(guessInput);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void WordIsInvalid_ValidInput_returnsFalse()
+        {
+            var guessInput = "cat";
+
+            var expected = false;
+
+            var sut = new CharacterGuess();
+
+            var result = sut.wordIsInvalid(guessInput);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }

@@ -31,5 +31,15 @@ namespace HangmanGUI
             }
         }
 
+        public bool wordIsInvalid(string input)
+        {
+            if (input.All(char.IsLetter) && input.Length > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

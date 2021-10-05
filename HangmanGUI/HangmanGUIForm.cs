@@ -116,7 +116,13 @@ namespace HangmanGUI
 
         private void submitWordButton_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == mysteryWord)
+
+            if (evaluater.wordIsInvalid(textBox2.Text))
+            {
+                MessageBox.Show("You have to guess a real word!");
+                return;
+            }
+            else if (textBox2.Text.ToLower() == mysteryWord.ToLower())
             {
                 MessageBox.Show("You have Won", "Congratulations");
                 System.Environment.Exit(1);
