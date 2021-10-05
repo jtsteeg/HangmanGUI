@@ -19,5 +19,11 @@ namespace HangmanGUITest
 
             Assert.AreEqual(mysteryWordLength, displayedCharacters);
         }
+
+        [TestMethod]
+        public void DrawLines_Run_DisplayedMatchesLength()
+        {
+    
+        }
     }
 }

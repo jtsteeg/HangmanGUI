@@ -70,7 +70,7 @@ namespace HangmanGUI
             label1.Text = "Word Length: " + mysteryWord.Length;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void guessButton_Click(object sender, EventArgs e)
         {
             char letter = textBox1.Text.ToLower().ToCharArray()[0];
             if (!char.IsLetter(letter))
@@ -110,16 +110,16 @@ namespace HangmanGUI
             textBox1.Text = "";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void submitWordButton_Click(object sender, EventArgs e)
         {
             if (textBox2.Text == mysteryWord)
             {
                 MessageBox.Show("You have Won", "Congratulations");
-                //ResetGame();
+                ResetGame();
             }
             else
             {
-                MessageBox.Show("Thw word you guessed is wrong", "You lose!");
+                MessageBox.Show("The word you guessed is wrong", "You lose!");
 
             }
         }
