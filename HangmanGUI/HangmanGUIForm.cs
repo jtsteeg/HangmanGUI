@@ -51,8 +51,6 @@ namespace HangmanGUI
 
         }
 
-
-
         private void DrawLines()
         {
             mysteryWord = wordPool.GetRandomWord();
@@ -106,6 +104,8 @@ namespace HangmanGUI
                 }
             }
         }
+
+        //restarts game, not yet implemented
         void ResetGame()
         {
             DrawLines();
@@ -118,12 +118,12 @@ namespace HangmanGUI
             if (textBox2.Text == mysteryWord)
             {
                 MessageBox.Show("You have Won", "Congratulations");
-                ResetGame();
+                System.Environment.Exit(1);
             }
             else
             {
                 MessageBox.Show("The word you guessed is wrong", "You lose!");
-
+                System.Environment.Exit(1);
             }
         }
     }

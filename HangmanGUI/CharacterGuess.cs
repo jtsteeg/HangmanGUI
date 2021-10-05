@@ -8,14 +8,7 @@ namespace HangmanGUI
 {
     public class CharacterGuess
     {
-        public char guessChar { get; set; }
-        //public string mysteryWord { get; set; }
-
-        public CharacterGuess()
-        {
  
-        }
-
         public int logic(char letter, string mysteryWord)
         {
 
